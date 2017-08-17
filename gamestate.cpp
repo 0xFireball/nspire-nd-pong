@@ -14,6 +14,7 @@ void GameState::create() {
 }
 
 void GameState::update(float dt) {
-    // TODO: add custom update logic
+    this->game->keys
+
     NState::update(dt);
 }
