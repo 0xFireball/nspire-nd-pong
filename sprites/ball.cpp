@@ -18,6 +18,10 @@ void Ball::update(float dt) {
         // but for now, bounce
         this->_vel.setX(-this->_vel.getX());
     }
+    if (pos.getY() < 0 || pos.getY() - this->width > Reg::game->height) {
+        // reflect y-vel
+        this->_vel.setY(-this->_vel.getY());
+    }
 
     NSprite::update(dt);
 }
