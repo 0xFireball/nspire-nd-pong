@@ -60,10 +60,9 @@ $(EXE).tns: $(EXE).elf
 $(EXE).prg.tns: $(EXE).tns
 	make-prg $(DISTDIR)/$^ $(DISTDIR)/$@
 
-$(EXE).elf: $(OBJS)
+$(EXE).elf: $(CXXFILES)
 	mkdir -p $(DISTDIR)
-# $(LD) $^ -o $(DISTDIR)/$@ $(LDFLAGS)
-	$(GXX) $(CFLAGS) $(CXXFILES) -o $(DISTDIR)/$@
+	$(GXX) $(CFLAGS) $(CXXFILES) -o $(DISTDIR)/$(EXE).elf
 
 else ifeq ($(XPLAT_TARGET), desktop)
 $(EXE).bin: $(CXXFILES)
