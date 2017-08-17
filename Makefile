@@ -1,4 +1,4 @@
-PRG_NAME = bouncyball
+PRG_NAME = pong
 
 DEBUG = FALSE
 XPLAT_TARGET=nspire
