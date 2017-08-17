@@ -38,7 +38,8 @@ void GameState::update(float dt) {
     //     this->ball->x++;
     // }
 
-    if (this->game->keys->pressed(SDLK_ESCAPE)) {
+    bool esc = this->game->keys->pressed(SDLK_ESCAPE);
+    if (esc) {
         this->game->quit();
     }
 

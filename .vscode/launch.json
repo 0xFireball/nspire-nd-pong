@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name": "(gdb) Launch [Desktop]",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceRoot}/linux/pong.bin",
@@ -19,6 +19,24 @@
                     "ignoreFailures": true
                 }
             ]
+        },
+        {
+            "name": "(gdb) Firebird [Nspire remote]",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/binspire/pong.elf",
+            "miDebuggerServerAddress": "localhost:3333",
+            "args": [
+                "-ex", "target remote :3333",
+                "-ex", "c",
+                "-ex", "bt",
+                "pong.elf"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb"
         }
     ]
 }
