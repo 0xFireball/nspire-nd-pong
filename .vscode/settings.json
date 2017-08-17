@@ -1,5 +1,12 @@
 {
     "files.associations": {
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "cmath": "cpp",
+        "array": "cpp",
+        "bitset": "cpp",
+        "initializer_list": "cpp",
+        "string_view": "cpp",
+        "utility": "cpp",
+        "valarray": "cpp"
     }
 }

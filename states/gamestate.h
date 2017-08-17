@@ -1,8 +1,13 @@
-#include "deps.h"
+
+#pragma once
+
+#include "../deps.h"
+
+#include "../sprites/ball.h"
 
 class GameState : public NState {
   private:
-    NSprite *ball;
+    Ball *ball;
 
   public:
     virtual void create();
