@@ -5,7 +5,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceRoot}/linux/bouncyball.bin",
+            "program": "${workspaceRoot}/linux/pong.bin",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",

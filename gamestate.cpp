@@ -6,15 +6,37 @@ void GameState::create() {
 
     this->setClearColor(NColor(84, 84, 84));
 
-    NSprite* ball = new NSprite(20, 20);
-    ball->loadGraphic("ball.bmp.tns");
-    this->add(ball);
+    this->ball = new NSprite(20, 20);
+    this->ball->loadGraphic("ball.bmp.tns");
+    this->add(this->ball);
 
     NState::create();
 }
 
 void GameState::update(float dt) {
-    this->game->keys
+    bool up = this->game->keys->pressed(SDLK_UP);
+    bool down = this->game->keys->pressed(SDLK_DOWN);
+    bool left = this->game->keys->pressed(SDLK_LEFT);
+    bool right = this->game->keys->pressed(SDLK_RIGHT);
+
+    if (up && down) {
+        up = down = false;
+    }
+    if (left && right) {
+        left = right = false;
+    }
+    if (up) {
+        this->ball->y--;
+    }
+    if (down) {
+        this->ball->y++;
+    }
+    if (left) {
+        this->ball->x--;
+    }
+    if (right) {
+        this->ball->x++;
+    }
 
     NState::update(dt);
 }
