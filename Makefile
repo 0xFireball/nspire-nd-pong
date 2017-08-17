@@ -73,4 +73,5 @@ $(EXE).bin: $(CXXFILES)
 endif
 
 clean:
-	rm -f *.o $(DISTDIR)/$(EXE).tns $(DISTDIR)/$(EXE).elf $(DISTDIR)/$(EXE).bin $(DISTDIR)/$(EXE).prg.tns
+	find . -name \*.o -type f -delete
+	rm -f $(DISTDIR)/$(EXE).tns $(DISTDIR)/$(EXE).elf $(DISTDIR)/$(EXE).bin $(DISTDIR)/$(EXE).prg.tns
