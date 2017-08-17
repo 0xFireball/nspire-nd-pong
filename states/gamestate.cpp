@@ -38,5 +38,9 @@ void GameState::update(float dt) {
     //     this->ball->x++;
     // }
 
+    if (this->game->keys->pressed(SDLK_ESCAPE)) {
+        this->game->quit();
+    }
+
     NState::update(dt);
 }
