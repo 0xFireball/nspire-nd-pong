@@ -1,4 +1,4 @@
-#include "nd/nd.h"
+#include "deps.h"
 
 class GameState: public NState {
 public:
