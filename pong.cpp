@@ -11,8 +11,8 @@ int main(int argc, char **argv) {
 
     game->platform_init(argc, argv);
 
-    // Initialize NGame at max screen size, 60FPS target
-    game->init(0, 0, 60);
+    // Initialize NGame at max screen size, 30FPS target
+    game->init(0, 0, 30);
     Reg::game = game;
     game->switch_state(new GameState());
     game->start();
