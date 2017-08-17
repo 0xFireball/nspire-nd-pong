@@ -7,7 +7,7 @@
 #include "states/gamestate.h"
 
 int main(int argc, char **argv) {
-    std::shared_ptr<NGame> game(new NGame());
+    auto game = std::make_shared<NGame>();
 
     game->platform_init(argc, argv);
 
