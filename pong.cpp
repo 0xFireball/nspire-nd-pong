@@ -3,8 +3,7 @@
 
 #include "gamestate.h"
 
-int main(int argc, char** argv)
-{
+int main(int argc, char **argv) {
     std::unique_ptr<NGame> game(new NGame());
 
     game->platform_init(argc, argv);
