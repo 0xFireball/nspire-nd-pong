@@ -31,7 +31,7 @@ endif
 CYGWIN = FALSE
 ifeq ($(CYGWIN), 1)
 $(info Enabling support for Cygwin/Windows: [${CYGWIN}])
-	CFLAGS += -Llib -lmingw32 -lSDLmain -lSDL -m32
+	CFLAGS += -Lcyg/lib -Icyg/include -lmingw32 -lSDLmain -lSDL -lSDL_image -mwindows
 else
 	CFLAGS += -lSDL
 endif
