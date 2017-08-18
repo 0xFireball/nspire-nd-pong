@@ -31,5 +31,7 @@ void Ball::update(float dt) {
         this->_vel.setY(-this->_vel.getY());
     }
 
+    this->animation.play("blink");
+
     NSprite::update(dt);
 }
