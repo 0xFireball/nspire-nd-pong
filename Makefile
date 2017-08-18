@@ -62,6 +62,8 @@ HEADERFILES = $(shell find . -name \*.h)
 
 $(info Compile: [${GXX} ${CFLAGS}])
 
+.PHONY: all clean assets
+
 ifeq ($(XPLAT_TARGET), nspire)
 
 $(EXE).tns: $(EXE).elf
@@ -75,12 +77,18 @@ $(EXE).elf: $(CXXFILES) $(HEADERFILES)
 	$(GXX) $(CFLAGS) $(CXXFILES) -o $(DISTDIR)/$(EXE).elf
 
 else ifeq ($(XPLAT_TARGET), desktop)
+
 $(EXE).bin: $(CXXFILES) $(HEADERFILES)
 	mkdir -p $(DISTDIR)
 	$(GXX) $(CFLAGS) $(CXXFILES) -o $(DISTDIR)/$(EXE).bin
 
 endif
 
+ASSET_PATH = ./assets
+assets:
+	$(info Copying assets)
+	cp -r $(ASSET_PATH)/* $(DISTDIR)
+
 clean:
 	find . -name \*.o -type f -delete
-	rm -f $(DISTDIR)/$(EXE).tns $(DISTDIR)/$(EXE).elf $(DISTDIR)/$(EXE).bin $(DISTDIR)/$(EXE).prg.tns
+	rm -f $(DISTDIR)/*.tns $(DISTDIR)/$(EXE).elf $(DISTDIR)/$(EXE).bin
