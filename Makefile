@@ -18,14 +18,22 @@ GXX = g++
 LD = ld
 endif
 
-CFLAGS = -Wall -W --std=c++14
+CFLAGS += -Wall -W --std=c++14
 LDFLAGS =
 ZEHNFLAGS = --name $(PRG_NAME)
 
 ifeq ($(XPLAT_TARGET), nspire)
 	CFLAGS += -marm -Dnspire
 else ifeq ($(XPLAT_TARGET), desktop)
-	CFLAGS += -Ddesktop -lSDL
+	CFLAGS += -Ddesktop
+endif
+
+CYGWIN = FALSE
+ifeq ($(CYGWIN), 1)
+$(info Enabling support for Cygwin/Windows: [${CYGWIN}])
+	CFLAGS += -Llib -lmingw32 -lSDLmain -lSDL -m32
+else
+	CFLAGS += -lSDL
 endif
 
 ifeq ($(DEBUG),FALSE)
