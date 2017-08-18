@@ -27,5 +27,8 @@ void Paddle::update(float dt) {
         this->angle = 0;
     }
 
+    if (this->y + this->height / 2 < 0) { this->y = -this->height / 2; }
+    if (this->y + this->height / 2 > Reg::game->height) { this->y = Reg::game->height - this->height / 2; }
+
     NSprite::update(dt);
 }
