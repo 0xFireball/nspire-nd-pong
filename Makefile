@@ -33,7 +33,7 @@ ifeq ($(CYGWIN), 1)
 $(info Enabling support for Cygwin/Windows: [${CYGWIN}])
 	CFLAGS += -Lcyg/lib -Icyg/include -lmingw32 -lSDLmain -lSDL -lSDL_image -mwindows
 else
-	CFLAGS += -lSDL
+	CFLAGS += -I/usr/include/SDL -lSDL -lSDL_gfx
 endif
 
 ifeq ($(DEBUG),FALSE)
