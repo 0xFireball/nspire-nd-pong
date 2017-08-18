@@ -58,6 +58,8 @@ desktop: $(EXE).bin
 endif
 
 CXXFILES = $(shell find . -name \*.cpp)
+HEADERFILES = $(shell find . -name \*.h)
+
 $(info Compile: [${GXX} ${CFLAGS}])
 
 ifeq ($(XPLAT_TARGET), nspire)
@@ -68,12 +70,12 @@ $(EXE).tns: $(EXE).elf
 $(EXE).prg.tns: $(EXE).tns
 	make-prg $(DISTDIR)/$^ $(DISTDIR)/$@
 
-$(EXE).elf: $(CXXFILES)
+$(EXE).elf: $(CXXFILES) $(HEADERFILES)
 	mkdir -p $(DISTDIR)
 	$(GXX) $(CFLAGS) $(CXXFILES) -o $(DISTDIR)/$(EXE).elf
 
 else ifeq ($(XPLAT_TARGET), desktop)
-$(EXE).bin: $(CXXFILES)
+$(EXE).bin: $(CXXFILES) $(HEADERFILES)
 	mkdir -p $(DISTDIR)
 	$(GXX) $(CFLAGS) $(CXXFILES) -o $(DISTDIR)/$(EXE).bin
 
