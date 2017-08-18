@@ -5,7 +5,10 @@ void GameState::create() {
     // add sprite
     // TODO
 
-    this->setClearColor(NColor(84, 84, 84));
+    this->setClearColor(NColor(0, 0, 0));
+
+    this->player = new Paddle(-20, this->game->height / 2);
+    this->add(this->player);
 
     this->ball = new Ball(20, 20);
     this->add(this->ball);
