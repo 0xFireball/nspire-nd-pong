@@ -5,7 +5,7 @@ void GameState::create() {
     // add sprite
     // TODO
 
-    this->setClearColor(NColor(0, 0, 0));
+    this->setClearColor(NColor(0.0));
 
     this->collision = std::make_unique<NCollision>(
         Rect(0, 0, this->game->width, this->game->height));

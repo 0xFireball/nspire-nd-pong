@@ -2,10 +2,14 @@
 #include "paddle.h"
 
 void Paddle::update(float dt) {
-    bool up = Reg::game->keys->pressed(SDLK_UP);
-    bool down = Reg::game->keys->pressed(SDLK_DOWN);
-    bool left = Reg::game->keys->pressed(SDLK_LEFT);
-    bool right = Reg::game->keys->pressed(SDLK_RIGHT);
+    std::vector<int> upKeys { SDLK_UP, SDLK_8 };
+    bool up = Reg::game->keys->anyPressed(upKeys);
+    std::vector<int> downKeys { SDLK_DOWN, SDLK_2 };
+    bool down = Reg::game->keys->anyPressed(downKeys);
+    std::vector<int> leftKeys { SDLK_LEFT, SDLK_4 };
+    bool left = Reg::game->keys->anyPressed(leftKeys);
+    std::vector<int> rightKeys { SDLK_RIGHT, SDLK_6 };
+    bool right = Reg::game->keys->anyPressed(rightKeys);
 
     if (up && down) {
         up = down = false;
