@@ -15,6 +15,9 @@ class Ball : public NSprite {
         std::vector<int> blink_frames{0, 1};
         this->animation.add("blink", blink_frames, 2);
     }
+
     virtual void update(float dt);
+
     void paddleHit(float left);
+    void respawn();
 };

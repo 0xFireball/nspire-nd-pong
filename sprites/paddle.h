@@ -11,7 +11,7 @@ class Paddle : public NSprite {
   public:
     Paddle(int x, int y) : NSprite(x, y) {
         loadGraphic("paddle.bmp.tns");
-        setHitbox(24, 4, 16, 56);
+        setHitbox(24, 8, 16, 52);
     }
 
     virtual void update(float dt);
