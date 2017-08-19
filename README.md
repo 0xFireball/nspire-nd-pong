@@ -2,6 +2,13 @@
 
 pong built with [nspire-nd](https://github.com/0xFireball/nspire-nd), a 2d framework that runs on both desktop and `ndless` on the TI Nspire.
 
+![nspire screenrec](media/pong_nspire_nd_4.gif)
+
+This is a low-framerate GIF screen recording from
+the TI Nspire CX CAS.
+(The game runs quite well on the Nspire, the GIF
+here just has a low framerate)
+
 ## Build
 
 Linux: `make DISTDIR=linux XPLAT_TARGET=desktop`
