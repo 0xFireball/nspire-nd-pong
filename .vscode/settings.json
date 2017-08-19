@@ -9,6 +9,7 @@
         "utility": "cpp",
         "valarray": "cpp",
         "*.tcc": "cpp",
-        "*.ipp": "cpp"
+        "*.ipp": "cpp",
+        "type_traits": "cpp"
     }
 }

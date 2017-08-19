@@ -42,6 +42,9 @@ else
 	CFLAGS += -O0 -g
 endif
 
+ADDFLAGS =
+CFLAGS += $(ADDFLAGS)
+
 OBJS = $(patsubst %.c, %.o, $(shell find . -name \*.c))
 OBJS += $(patsubst %.cpp, %.o, $(shell find . -name \*.cpp))
 OBJS += $(patsubst %.S, %.o, $(shell find . -name \*.S))
