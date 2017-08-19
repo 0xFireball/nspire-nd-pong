@@ -16,4 +16,5 @@ class Ball : public NSprite {
         this->animation.add("blink", blink_frames, 2);
     }
     virtual void update(float dt);
+    void paddleHit(float left);
 };

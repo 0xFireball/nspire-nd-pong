@@ -35,3 +35,8 @@ void Ball::update(float dt) {
 
     NSprite::update(dt);
 }
+
+void Ball::paddleHit(float left) {
+    this->_vel.setX(-this->_vel.getX());
+    this->x = left;
+}
