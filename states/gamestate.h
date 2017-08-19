@@ -8,8 +8,8 @@
 
 class GameState : public NState {
   private:
-    Ball *ball;
-    Paddle *player;
+    std::shared_ptr<Ball> ball;
+    std::shared_ptr<Paddle> player;
 
   public:
     virtual void create();

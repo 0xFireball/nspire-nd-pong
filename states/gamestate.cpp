@@ -7,10 +7,10 @@ void GameState::create() {
 
     this->setClearColor(NColor(0, 0, 0));
 
-    this->player = new Paddle(-20, this->game->height / 2);
+    this->player = std::make_shared<Paddle>(-20, this->game->height / 2);
     this->add(this->player);
 
-    this->ball = new Ball(20, 20);
+    this->ball = std::make_shared<Ball>(20, 20);
     this->add(this->ball);
 
     NState::create();
